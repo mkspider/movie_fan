@@ -2,6 +2,7 @@
   <nav class="navbar navbar-expand-lg bg-white">
 
 <div class="container">
+   
 <% if admin_signed_in? %><!--admin用-->
 
   <h2 class="nav-link text-left"><%= link_to admin_movies_path, class: "nav-link text-dark" do %>
@@ -24,7 +25,7 @@
 
 <% end %>
 
-
+  <li class="nav-link text-dark"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class: "nav-link text-dark" %></li>
 
   <li class="nav-link text-dark"><%= link_to "作品一覧", user_movies_path, class: "nav-link text-dark" %></li>
 

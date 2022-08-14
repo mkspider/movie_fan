@@ -10,7 +10,10 @@ module MovieFan
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.hosts << "819ae073f8a644aba61cd97d23a1c31b.vfs.cloud9.ap-northeast-1.amazonaws.com"
+
+    if Rails.env.development?
+      config.hosts << "819ae073f8a644aba61cd97d23a1c31b.vfs.cloud9.ap-northeast-1.amazonaws.com"
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #
