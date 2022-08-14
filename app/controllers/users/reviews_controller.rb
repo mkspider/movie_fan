@@ -1,4 +1,4 @@
-class User::ReviewsController < ApplicationController
+class Users::ReviewsController < ApplicationController
   def new
   end
 

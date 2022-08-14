@@ -1,10 +1,10 @@
-class Admin::MoviesController < ApplicationController
+class Admins::MoviesController < ApplicationController
   def new
-  end  
- 
+  end
+
   def index
   end
-  
+
   def show
   end
 
@@ -16,8 +16,8 @@ class Admin::MoviesController < ApplicationController
 
   def update
   end
-  
+
   def destroy
   end
-  
+
 end

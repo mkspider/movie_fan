@@ -1,4 +1,4 @@
-class User::GenresController < ApplicationController
+class Users::GenresController < ApplicationController
   def index
   end
 

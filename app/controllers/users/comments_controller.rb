@@ -1,4 +1,4 @@
-class User::CommentsController < ApplicationController
+class Users::CommentsController < ApplicationController
   def new
   end
 
@@ -9,7 +9,7 @@ class User::CommentsController < ApplicationController
   end
 
   def create
-  end
+  endS
 
   def edit
   end
