@@ -9,7 +9,7 @@ class Users::CommentsController < ApplicationController
   end
 
   def create
-  endS
+  end
 
   def edit
   end
