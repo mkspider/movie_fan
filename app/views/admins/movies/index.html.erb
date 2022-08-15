@@ -5,7 +5,7 @@
  
     <h2 class="p-3 mb-2 bg-dark text-white">作品一覧</h2>
   <h1 class="text-right">
-    <%= link_to "＋　新規追加", new_admins_movie_path, class: "btn btn-dark rounded-pill" %>
+    <%= link_to "＋新規追加", new_admins_movie_path, class: "btn btn-dark rounded-pill" %>
   </h1>
   
       <p id="notice"></p>
@@ -18,8 +18,8 @@
           <% @movies.each do |movie| %>
             <tr class="table-borderless">
               <td><%= movie.id %></td>
-              <td><%= link_to filmname, admins_movie_path(movie) %></td>
-              <td><%= movie.genrename %></td>
+              <td><%= link_to movie.filmname, admins_movies_path(movie) %></td>
+              <td><%#= movie.genrename %></td>
               <td>
               </td>
             </tr>

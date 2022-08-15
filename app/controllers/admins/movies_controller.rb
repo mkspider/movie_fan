@@ -14,13 +14,11 @@ class Admins::MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @genres = Genre.all
-    if @movie.save 
+    @movie.save 
       # save出来ない問題
       redirect_to admins_movies_path(@movie)
       flash[:notice] = '作品を登録しました！'
-    else
-    render "new"
-    end
+    
   end
 
   def edit
@@ -30,6 +28,9 @@ class Admins::MoviesController < ApplicationController
   end
 
   def destroy
+      movie = Movie.find(params[:id])
+      movie.destroy
+      redirect_to action: :index
   end
 
 private
