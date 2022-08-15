@@ -2,18 +2,20 @@
   <nav class="navbar navbar-expand-lg bg-white">
 
 <div class="container">
-   
+
 <% if admin_signed_in? %><!--admin用-->
 
-  <h2 class="nav-link text-left"><%= link_to admin_movies_path, class: "nav-link text-dark" do %>
+  <h2 class="nav-link text-left"><%= link_to admins_movies_path, class: "nav-link text-dark" do %>
     <i class="fas fa-birthday-cake"></i>作品一覧に戻る</h2>
   <% end %>
 
-  <li class="nav-link text-dark"><%= link_to "作品一覧", admin_movies_path, class: "nav-link text-dark" %></li>
+  <li class="nav-link text-dark"><%= link_to "作品一覧", admins_movies_path, class: "nav-link text-dark" %></li>
+  
+  <li class="nav-link text-dark"><%= link_to "作品登録", new_admins_movie_path, class: "nav-link text-dark" %></li>
 
-  <li class="nav-link text-dark"><%#= link_to "会員一覧", admin_customers_path, class: "nav-link text-dark" %></li>
+  <li class="nav-link text-dark"><%#= link_to "会員一覧", admins_users_path, class: "nav-link text-dark" %></li>
 
-  <li class="nav-link text-dark"><%= link_to "ジャンル一覧", admin_genres_path, class: "nav-link text-dark" %></li>
+  <li class="nav-link text-dark"><%= link_to "ジャンル一覧", admins_genres_path, class: "nav-link text-dark" %></li>
 
   <li class="nav-link text-dark"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark" %></li>
 
@@ -21,19 +23,21 @@
 
   <h2 class="nav-link text-left"><%= link_to root_path, class: "nav-link text-dark" do %>
     <i class="fas fa-birthday-cake"></i> Movie_fan</h2>
-  <% end %>
 
-<% end %>
+     <li class="nav-link text-dark"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class: "nav-link text-dark" %></li>
 
-  <li class="nav-link text-dark"><%= link_to 'ゲストログイン（閲覧用）', homes_guest_sign_in_path, method: :post, class: "nav-link text-dark" %></li>
-
-  <li class="nav-link text-dark"><%= link_to "作品一覧", user_movies_path, class: "nav-link text-dark" %></li>
+  <li class="nav-link text-dark"><%= link_to "作品一覧", users_movies_path, class: "nav-link text-dark" %></li>
 
   <li class="nav-link text-dark"><%= link_to "新規登録" ,new_user_registration_path, class: "nav-link text-dark" %></li>
 
   <li class="nav-link text-dark"><%= link_to "ログイン" ,new_user_session_path, class: "nav-link text-dark" %></li>
 
  <li class="nav-link text-dark"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-dark" %></li>
+
+  <% end %>
+
+<% end %>
+
 
 
 </div>

@@ -12,7 +12,7 @@ devise_for :admins, controllers: {
 post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
 
-  namespace :user do
+  namespace :users do
 
     resources :reviews, only:[:new,:index,:show,:create,:edit,:update,:destroy]
     resources :comments, only:[:new,:index,:show,:create,:edit,:update,:destroy]
@@ -20,7 +20,7 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
     resources :movies, only:[:index,:show]
 
   end
-  namespace :admin do
+  namespace :admins do
     resources :reviews, only:[:index,:show,:destroy]
     resources :comments, only:[:index,:show,:destroy]
     resources :movies, only:[:new,:index,:show,:create,:edit,:update,:destroy]
