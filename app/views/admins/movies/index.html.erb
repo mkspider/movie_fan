@@ -18,7 +18,7 @@
           <% @movies.each do |movie| %>
             <tr class="table-borderless">
               <td><%= movie.id %></td>
-              <td><%= link_to movie.filmname, admins_movies_path(movie) %></td>
+              <td><%= link_to movie.filmname, admins_movie_path(movie) %></td>
               <td><%#= movie.genrename %></td>
               <td>
               </td>

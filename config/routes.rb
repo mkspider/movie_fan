@@ -21,7 +21,7 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
   end
   namespace :admins do
-    resources :reviews, only:[:index,:show,:destroy]
+    resources :reviews, only:[:create,:index,:show,:destroy]
     resources :comments, only:[:index,:show,:destroy]
     resources :movies, only:[:new,:index,:show,:create,:edit,:update,:destroy]
     resources :genres, only:[:index,:create,:edit,:update]
