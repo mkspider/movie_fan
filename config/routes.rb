@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -18,6 +19,7 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
     resources :comments, only:[:new,:index,:show,:create,:edit,:update,:destroy]
     resources :genres, only:[:show]
     resources :movies, only:[:index,:show]
+    resources :users, only:[:show,:edit]
 
   end
   namespace :admins do
