@@ -1,2 +1,44 @@
-<h1>User::Reviews#index</h1>
-<p>Find me in app/views/user/reviews/index.html.erb</p>
+ <div class="container" style="margin-top: 50px;">
+  <div class="col-md-8 offset-md-2"> <%#.offset-md-1 は .col-md-9 を 1 カラムぶん右に移動%>
+<div class="shadow p-3 mb-5 bg-white rounded">
+
+ 
+    <h2 class="p-3 mb-2 bg-dark text-white">レビュー一覧</h2>
+  <h1 class="text-right">
+    <%= link_to "＋新規追加",new_users_review, class: "btn btn-dark rounded-pill" %>
+  </h1>
+  
+      <p id="notice"></p>
+      <table class="table table-hover">
+        <tr class="table-secondary">
+          <th>ユーザーネーム</th>
+              <th>年代</th>
+              <th>性別</th>
+        </tr>
+          <% @reviews.each do |review| %>
+            <tr class="table-borderless">
+              <tr>
+        <td>
+          <%#= link_to users_review_path(post.id) do %>
+            <%# if post.main_images.attached? %>
+              <%# post.main_images.each do |main_image| %>
+                <%#= image_tag main_image.variant(resize_to_limit: [100, 100]) %>
+              <%# end %>
+            <%# end %>
+          <%# end %>
+        </td>
+              <td><%#= user.name %></td><!--カラムにネームを追加出来ていない-->
+              <td><%= movie.id %></td>
+              <td><%= link_to movie.filmname, admins_movie_path(movie) %></td>
+              <td><%#= movie.genrename %></td>
+              <td>
+              </td>
+            </tr>
+            <% end %>
+      </table>
+</div>
+<ul class="pagination justify-content-center">
+<%= paginate @movies %>
+</ul>
+</div>
+</div>
