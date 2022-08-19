@@ -20,7 +20,7 @@
       <tbody>
       <td>作品名</td><td><%= @movie.filmname %></td>
       <tr><td>作品概要</td><td><%= @movie.introduction %></td></tr>
-        <tr><td>ジャンル</td><td><%#= @movie.genrename %></td></tr>
+        <tr><td>ジャンル</td><td><%= @movie.genre_name %></td></tr>
           <tr>
             <td><%= link_to '編集する', edit_admins_movie_path(@movie.id), class: "btn btn-outline-success" %></td>
             <td><%= link_to "削除する", admins_movie_path(@movie.id),method: :delete, "data-confirm" => "削除しますか?",  class: "btn btn-outline-success" %></td>

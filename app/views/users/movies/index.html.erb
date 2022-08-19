@@ -2,23 +2,26 @@
     <div class="row">
         <div class="col-md-2"style="margin-top: 50px; text-align: center;">
 
+
          <button type="button" class="btn btn-dark w-100 btn-lg">ジャンル検索</button>
         <% @genres.each do |genre| %>
           <div>
-            <%= link_to genre.name, user_genre_path(genre.id),class: "btn btn-outline-dark w-100" %>
+            <%= link_to genre.genre_name, users_genre_path(genre.id),class: "btn btn-outline-dark w-100" %>
           </div>
         <% end %>
 
         </div>
+            <div>
+              <h3>貴方が気になった作品を探してみましょう！</h3>
+            </div>
            <div class="col-md-10" style="margin-top: 50px;">
               <h4 class="border-bottom">作品一覧<span style="font-size:20px;">(全<span style="font-size:25px;"><%= @movies_all %></span>件)</span></h4>
               <div class="d-flex flex-wrap">
               <% @movies.each do |movie| %>
                <div class ="item_container px-5 py-5" style = "width: 25%">
                 <%#= link_to movie.id.to_s,users_movies_path(movie.id) do %>
-                <div><%= movie.id %></div>
-                <%= link_to movie.filmname, users_movie_path(movie) %>
-                  <%#= image_tag item.get_image, size: '150x150' %>
+                <%#= image_tag item.get_image, size: '150x150' %>
+                <div><%= link_to movie.filmname, users_movie_path(movie) %></div>
                 <%# end %>
               <% end %>
             </div>

@@ -5,8 +5,13 @@
  
     <h2 class="p-3 mb-2 bg-dark text-white">レビュー一覧</h2>
   <h1 class="text-right">
-    <%= link_to "＋新規追加",new_users_review_path, class: "btn btn-dark rounded-pill" %>
+    <% @movies.each do |movie| %>
+      <div>作品名</div>
+       <div><%= movie.filmname %></div>
+         <%= link_to "＋新規追加",new_movie_reviews_path(movie.id), class: "btn btn-dark rounded-pill" %>
+    <% end %>
   </h1>
+ 
   
       <p id="notice"></p>
       <table class="table table-hover">
@@ -19,7 +24,7 @@
           <% @reviews.each do |review| %>
             <tr class="table-borderless">
                <td>
-                <%= link_to users_review_path(post.id) do %>
+                <%= link_to movie_review_path(review.movie.id,review.id) do %>
                  <% if post.main_images.attached? %>
                 <% post.main_images.each do |main_image| %>
                  <%= image_tag main_image.variant(resize_to_limit: [100, 100]) %>

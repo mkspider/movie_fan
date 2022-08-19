@@ -5,6 +5,7 @@ class Users::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all.page(params[:page]).per(4)
+    @movie =Movie.all
   end
 
   def show
@@ -13,7 +14,7 @@ class Users::ReviewsController < ApplicationController
   end
 
   def create
-    movie = Movie.find(params[:id])
+    movie = Movie.find(params[:movie_id])
     review = current_users.reviews.new(review_params)
     review.movie_id = movie.id
     review.save
@@ -38,7 +39,7 @@ class Users::ReviewsController < ApplicationController
       render "edit"
     end
   end
-  
+
   private
   def review_params
     params.require(:review).permit(:title,:review,:image)

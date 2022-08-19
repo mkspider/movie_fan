@@ -2,6 +2,7 @@
   <div class="col-md-8 offset-md-2"> <%#.offset-md-1 は .col-md-9 を 1 カラムぶん右に移動%>
 <div class="shadow p-3 mb-5 bg-white rounded">
 
+
  
     <h2 class="p-3 mb-2 bg-dark text-white">作品一覧</h2>
   <h1 class="text-right">
@@ -19,7 +20,7 @@
             <tr class="table-borderless">
               <td><%= movie.id %></td>
               <td><%= link_to movie.filmname, admins_movie_path(movie) %></td>
-              <td><%#= movie.genrename %></td>
+              <td><%= movie.genre.genre_name %></td>
               <td>
               </td>
             </tr>
