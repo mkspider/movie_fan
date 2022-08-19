@@ -2,7 +2,8 @@
 <table>
   <tr>
     <th>プロフィール画像</th>
-    <td><%= image_tag @user.get_profile_image, size:'100x100' %></td>
+    <td><%#= image_tag @user.get_profile_image, size:'100x100' %></td>
+    <p>投稿ユーザー画像：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
   </tr>
   <tr>
     <th>ユーザーネーム</th>

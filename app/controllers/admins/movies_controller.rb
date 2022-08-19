@@ -16,7 +16,7 @@ class Admins::MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @genres = Genre.all
-    @movie.save
+    @movie.save!
       # save出来ない問題
       redirect_to admins_movies_path(@movie)
       flash[:notice] = '作品を登録しました！'
@@ -46,6 +46,6 @@ class Admins::MoviesController < ApplicationController
 
 private
 def movie_params
-   params.require(:movie).permit(:filmname,:genrename,:introduction)
+   params.require(:movie).permit(:filmname,:genre_id,:introduction)
 end
 end

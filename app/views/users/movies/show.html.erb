@@ -15,6 +15,6 @@
       <tbody>
         <td>作品名</td><td><%= @movie.filmname %></td>
       <tr><td>作品概要</td><td><%= @movie.introduction %></td></tr>
-        <tr><td>ジャンル</td><td><%#= @movie.genrename %></td></tr>
-        <tr><td></td><td><%= link_to "レビュー一覧を開く",users_reviews_path %></td></tr>
+        <tr><td>ジャンル</td><td><%= @movie.genre.genre_name %></td></tr>
+        <tr><td></td><td><%= link_to "レビュー一覧を開く",movie_reviews_path(@movie.id) %></td></tr>
           <tr>
