@@ -5,7 +5,7 @@
     <div class="col-md-8 offset-1"style="margin-top: 30px;">
       <h2 class="p-3 mb-2 bg-dark text-white">レビュー新規登録</h2>
       <p id="notice"></p>
-        <%= form_with model:@review, url:users_reviews_path, method: :post do |f| %>
+        <%= form_with model:@review, url:movie_reviews_path, method: :post do |f| %>
           <form>
             <div class="form-group", style="text-align: left;",>
               <p id="notice"></p>
@@ -15,13 +15,13 @@
             <div class="form-group">
               <div class="col-sm-10">
               <p id="notice"></p>
-               <%= f.label :商品名 %>
-                <%= f.text_field :filmname, placeholder: "作品名" %>
+               <%= f.label :作品名 %>
+                <%= f.text_field :title, placeholder: "作品名" %>
             </div>
             <div class="form-group">
               <p id="notice"></p>
                <%= f.label :商品説明 %>
-                <%= f.text_area :introduction, placeholder: "ここに説明文を記述します" %>
+                <%= f.text_area :review, placeholder: "ここに説明文を記述します" %>
             </div>
 
              <div class="form-group" style="text-align: center;">
