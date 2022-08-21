@@ -1,2 +1,37 @@
-<h1>User::Reviews#show</h1>
-<p>Find me in app/views/user/reviews/show.html.erb</p>
+<h2>投稿詳細</h2>
+
+<table>
+  <tr>
+    <td>
+      <% @users.each do |user| %>
+       <% if user.profile_image.present? %>
+        <%= image_tag user.profile_image,size:"100x100" %>
+       <% end %>
+    </td>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+       <% end %>
+  </tr>
+  <tr>
+     <td><%= @review.title %></td>
+     <td><%= @review.review %></td>
+    <% if @review.user.id == current_user.id %>
+      <td><button><%= link_to "編集", edit_users_movie_review_path(@review) %></button></td>
+      <td><button><%= link_to "削除", users_movie_review_path(@review), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
+    <% end %>
+  </tr>
+</table>
+
+
+<!--コメント機能-->
+<div id="form-area">
+ <%#= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+</div>
+
+<!--コメント一覧-->
+<div id="comments-area">
+ <%#= render 'public/post_comments/post_comment', post: @post, post_comment: @post_comment %>
+</div>
+
+

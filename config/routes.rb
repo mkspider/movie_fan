@@ -14,9 +14,12 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
 
   namespace :users do
-    resources :comments
     resources :genres, only:[:show]
-    resources :movies, only:[:index,:show]
+    resources :movies, only:[:index,:show] do
+      resources :reviews do
+         resources :comments
+      end
+    end
     resources :users, only:[:show,:edit,:update]
 
   end
@@ -26,11 +29,12 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
     resources :movies
     resources :genres, only:[:index,:create,:edit,:update]
   end
-  resources :movies do
-    resources :reviews,module: 'users'
-  end
-
-
+  # resources :movies do
+  #   resources :reviews,module: 'users'
+  # end
+  # resources :reviews do
+  #   resources :comments,module: 'users'
+  # end
   root to: "homes#top"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

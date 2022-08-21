@@ -3,18 +3,21 @@
   <div class="row">
     <div class="col-md-3" style="text-align: left;">
 　　　<table class="table">
-      <h2 class="p-3 mb-2 bg-dark text-white">作品詳細</h2>
+        <h2 class="p-3 mb-2 bg-dark text-white">作品詳細</h2>
     </div>
-    <div class="col-md-8", style="margin-top: 50px;">
-      <tr>
-      </tr>
-     </table>
-      </div>
+        <div class="col-md-8", style="margin-top: 50px;"></div>
+      </table>
     <div class="col-md-6 offset-1"style="margin-top: 150px;">
     <table class="table">
       <tbody>
         <td>作品名</td><td><%= @movie.filmname %></td>
       <tr><td>作品概要</td><td><%= @movie.introduction %></td></tr>
         <tr><td>ジャンル</td><td><%= @movie.genre.genre_name %></td></tr>
-        <tr><td></td><td><%= link_to "レビュー一覧を開く",movie_reviews_path(@movie.id) %></td></tr>
-          <tr>
+        <tr><td><%= link_to "レビュー一覧を開く",users_movie_reviews_path(@movie) %></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+ </div>
+</div>
+</div>
