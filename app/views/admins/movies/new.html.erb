@@ -26,7 +26,7 @@
             <div>
               <p id="notice"></p>
               <%= f.label:ジャンル %>
-              <%= f.collection_select :genre_id, Genre.all, :id, :genre_name,{prompt: "選択してください"} %>
+              <%= f.collection_select :genre_id, Genre.all, :id, :genrename,{prompt: "選択してください"} %>
             </div>
              <div class="form-group" style="text-align: center;">
                 <p id="notice"></p>
