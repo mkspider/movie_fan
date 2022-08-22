@@ -65,6 +65,7 @@ group :production do
 end
 
 gem 'devise'
+gem "jquery-rails"
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"

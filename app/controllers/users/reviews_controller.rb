@@ -11,6 +11,7 @@ class Users::ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    @movie =Movie.find(params[:movie_id])
     @comment = Comment.new
     @users = User.all
   end
@@ -26,16 +27,20 @@ class Users::ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+    @movie =Movie.find(params[:movie_id])
+    byebug
   end
 
-  def destroy #デストロイ後にidがないよとエラーが出る
+  def destroy
     @review = Review.find(params[:id])
+    @movie =@review.movie_id
     @review.destroy
-    redirect_to users_movie_reviews_path
+    redirect_to users_movie_reviews_path(@movie)
   end
 
   def update
     @review = Review.find(params[:id])
+    @movie =@review.movie_id
     if @review.update(review_params)
       redirect_to users_movie_reviews_path
     else
