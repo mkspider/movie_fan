@@ -14,14 +14,14 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
 
   namespace :users do
+    resources :users, only:[:show,:edit,:update]
     resources :genres, only:[:show]
     resources :movies, only:[:index,:show] do
       resources :reviews do
-         resources :comments
+         resources :comments do
+         end
       end
     end
-    resources :users, only:[:show,:edit,:update]
-
   end
   namespace :admins do
     resources :reviews, only:[:create,:index,:show,:destroy]

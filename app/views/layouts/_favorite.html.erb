@@ -1,0 +1,9 @@
+<% if post.favo?(current_user) %>
+  <%= link_to favorites_path(post), method: :delete do %>
+    ♥ <%= review.favorites.count %>
+  <% end %>
+<% else %>
+  <%= link_to favorites_path(post), method: :post do %>
+    ♡ <%= review.favorites.count %>
+  <% end %>
+<% end %>

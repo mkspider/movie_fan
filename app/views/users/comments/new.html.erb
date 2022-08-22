@@ -1,2 +1,27 @@
-<h1>User::Comments#new</h1>
-<p>Find me in app/views/user/comments/new.html.erb</p>
+<div class="container" style="margin-top: 50px;">
+  <div class="col-md-8 offset-md-2">
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      <div class="row">
+        <div class="col-md-8 offset-1" style="margin-top: 30px;">
+          <!--<div>--> <!--レビュー表示-->
+          <!--  <%#= @review.review.id %>-->
+          <!--</div>-->
+          <h2 class="p-3 mb-2 bg-dark text-white">コメント新規登録</h2>
+          <p id="notice"></p>
+          <%= form_with model:@comment, url:users_movie_review_comments_path, method: :post do |f| %>
+            <form>
+              <div class="form-group">
+                <p id="notice"></p>
+                  <%= f.text_area :comment, placeholder: "返信欄" %>
+              </div>
+              <div class="form-group" style="text-align: center;">
+                <p id="notice"></p>
+                <%= f.submit "返信", class: "btn btn-outline-success"  %>
+              </div>
+            </form>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
