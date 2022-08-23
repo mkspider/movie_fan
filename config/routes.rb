@@ -22,12 +22,19 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
          end
       end
     end
+
+    get "search_movie" => "movies#search_movie"
+
   end
+
   namespace :admins do
-    resources :reviews, only:[:create,:index,:show,:destroy]
-    resources :comments, only:[:index,:show,:destroy]
-    resources :movies
-    resources :genres, only:[:index,:create,:edit,:update]
+    resources :movies do
+      resources :reviews, only:[:create,:index,:show,:destroy]do
+        resources :comments, only:[:index,:show,:destroy]do
+        end
+      end
+    end
+    resources :genres, only:[:index,:create,:edit,:update,:destroy]
   end
   # resources :movies do
   #   resources :reviews,module: 'users'

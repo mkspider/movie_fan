@@ -4,7 +4,7 @@ class Users::CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.where(review_id: params[:review_id]).page(params[:page]).per(4)
+    @comments = Comment.where(review_id: params[:review_id])
     @review =Review.find(params[:review_id])
     @users = User.all
     @movie = Movie.find(params[:movie_id])

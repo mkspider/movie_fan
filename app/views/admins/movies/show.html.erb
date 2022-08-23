@@ -7,11 +7,11 @@
     </div>
     <div class="col-md-8", style="margin-top: 50px;">
       <tr>
-      <%# if @movie.image.attached? %>
-        <%#= image_tag @movie.image, size: "250x250" %>
-      <%# else %>
-        <%= image_tag 'movie.png', size: "250x250" %>
-      <%# end %>
+        <% if @movie.image.attached? %>
+          <%= image_tag @movie.image,size: "250x250" %>
+        <% else %>
+          <%= image_tag 'movie.png', size: "200x200" %>
+        <% end %>
       </tr>
      </table>
       </div>
@@ -20,11 +20,12 @@
       <tbody>
       <td>作品名</td><td><%= @movie.filmname %></td>
       <tr><td>作品概要</td><td><%= @movie.introduction %></td></tr>
-        <tr><td>ジャンル</td><td><%= @movie.genre_name %></td></tr>
+        <tr><td>ジャンル</td><td><%= @movie.genre.genre_name %></td></tr>
           <tr>
             <td><%= link_to '編集する', edit_admins_movie_path(@movie.id), class: "btn btn-outline-success" %></td>
             <td><%= link_to "削除する", admins_movie_path(@movie.id),method: :delete, "data-confirm" => "削除しますか?",  class: "btn btn-outline-success" %></td>
             <td><%= link_to "一覧に戻る", admins_movies_path, class: "btn btn-outline-success" %></td>
+            <td><%= link_to "レビュー一覧を開く",admins_movie_reviews_path(@movie),class: "btn btn-outline-success" %></td>
           </tr>
       </tbody>
     </table>
