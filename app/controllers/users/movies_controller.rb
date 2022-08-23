@@ -2,6 +2,7 @@ class Users::MoviesController < ApplicationController
   def index
     @genres = Genre.all
     @movies = Movie.all.page(params[:page]).per(10)
+    
   end
 
   def show
@@ -17,6 +18,6 @@ class Users::MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:filmname,:introduction,:gunre,:image)
+    params.require(:movie).permit(:filmname,:introduction,:genre,:image)
   end
 end

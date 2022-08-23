@@ -19,8 +19,8 @@
      <td><%= link_to "返信欄へ",users_movie_review_comments_path(movie_id: @movie, review_id: @review) %></td>
      <td><%= link_to "返信する", new_users_movie_review_comment_path(movie_id: @movie, review_id: @review) %></td>
     <% if @review.user.id == current_user.id %>
-      <td><button><%= link_to "編集", edit_users_movie_review_path(@review) %></button></td>
-      <td><button><%= link_to "削除", users_movie_review_path(@review), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
+      <td><button><%= link_to "編集", edit_users_movie_review_path(movie_id: @movie, review_id: @review) %></button></td>
+      <td><button><%= link_to "削除", users_movie_review_path(movie_id: @movie, review_id: @review), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
     <% end %>
   </tr>
 </table>
