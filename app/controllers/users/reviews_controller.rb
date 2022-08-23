@@ -7,7 +7,7 @@ class Users::ReviewsController < ApplicationController
     @reviews = Review.where(movie_id: params[:movie_id]).page(params[:page]).per(4)
     @movie =Movie.find(params[:movie_id])
     @users = User.all
-  
+
   end
 
   def show
@@ -42,7 +42,7 @@ class Users::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @movie =@review.movie_id
     if @review.update(review_params)
-      redirect_to users_movie_reviews_path
+      redirect_to users_movie_reviews_path(@movie)
     else
       render "edit"
     end
