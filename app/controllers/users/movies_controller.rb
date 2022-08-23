@@ -1,7 +1,6 @@
 class Users::MoviesController < ApplicationController
   def index
     @genres = Genre.all
-    # p Movie.all
     @movies = Movie.all.page(params[:page]).per(10)
   end
 
@@ -10,9 +9,14 @@ class Users::MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @review = Review.all
   end
+  
+  def search_movie
+    @movie=Movie.new
+    @movies = Movie.search(params[:keyword])
+  end
 
   private
   def movie_params
-    params.require(:movie).permit(:filmname,:introduction,:image)
+    params.require(:movie).permit(:filmname,:introduction,:gunre,:image)
   end
 end

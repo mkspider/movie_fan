@@ -5,7 +5,7 @@
       <div class="col-md-12" style="text-align: left;">
         <h2 class="p-3 mb-2 bg-dark text-white">情報編集</h2>
        <p id="notice"></p>
-        <%= form_with model: @review, url:users_movie_review_path(@movie,@review), method: :patch do |f| %>
+        <%= form_with model: @review, url:users_movie_review_path, method: :patch do |f| %>
         <form>
           <table class="table table-borderless">
           <tr><div class="form-group", style="text-align: left;",>
@@ -21,7 +21,6 @@
                     <p id="notice"></p>
                   <tr><td><%= f.label :レビュー本文, class: "mr-5" %></td>
                 <td><%= f.text_area :review %></td></tr>
-
               </div>
            </div>
         </table>

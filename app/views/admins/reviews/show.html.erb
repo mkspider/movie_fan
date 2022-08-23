@@ -1,2 +1,22 @@
-<h1>Admin::Reviews#show</h1>
-<p>Find me in app/views/admin/reviews/show.html.erb</p>
+<h2>投稿詳細</h2>
+
+<table>
+  <tr>
+    <td>
+      <% @users.each do |user| %>
+       <% if user.profile_image.present? %>
+        <%= image_tag user.profile_image,size:"100x100" %>
+       <% end %>
+    </td>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+      <% end %>
+  </tr>
+  <tr>
+     <td><%= @review.title %></td>
+     <td><%= @review.review %></td>
+     <td><%= link_to "返信欄へ",admins_movie_review_comments_path(movie_id: @movie, review_id: @review) %></td>
+    <td><button><%= link_to "削除", admins_movie_review_path(@review), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
+  </tr>
+</table>

@@ -7,6 +7,7 @@ class Users::ReviewsController < ApplicationController
     @reviews = Review.where(movie_id: params[:movie_id]).page(params[:page]).per(4)
     @movie =Movie.find(params[:movie_id])
     @users = User.all
+  
   end
 
   def show
@@ -27,8 +28,7 @@ class Users::ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-    @movie =Movie.find(params[:movie_id])
-    byebug
+    @movie =@review.movie_id
   end
 
   def destroy
