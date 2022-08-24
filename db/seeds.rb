@@ -10,3 +10,10 @@ Admin.create!(
   email: 'admin@admin',
   password: '202020',
 )
+
+100.times.each do |tmp|
+  Movie.create([
+                filmname: Faker::JapaneseMedia::StudioGhibli.movie,
+                introduction: Faker::JapaneseMedia::StudioGhibli.quote
+              ])
+end

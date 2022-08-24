@@ -1,0 +1,24 @@
+<%= form_tag(homes_search_movie_path, method: :get) do %>
+  <%= label_tag :keywords, '検索ワード' %>
+
+  <%# 検索ワードを引く次ぐためにparams[:keywords] %>
+  <%= text_field_tag :keywords, params[:keywords] %>
+
+  <%# セレクトボックスの状態を引き継ぐためにoptions_for_selectのselectedオプションを使用 %>
+  <%= select_tag('type', options_for_select([%w[AND AND], %w[OR OR]], { :selected => params[:type] })) %>
+
+  <%= submit_tag '検索' %>
+<% end %>
+
+<%# @resultsにデータが入っていれば検索結果を表示する %>
+<!--<%# if @results %>-->
+<!--  <h2><%#= @keywords %> Search Result ( <%#= @type %> )-->
+<!--  <%# @results.each do |result| %>-->
+<!--    <p>-->
+<!--      <%#= result.title %><br>-->
+<!--      <small>-->
+<!--        <%#= result.body %>-->
+<!--      </small>-->
+<!--    </p>-->
+<!--  <%# end %>-->
+<!--<%# end %>-->

@@ -64,6 +64,11 @@ group :production do
   gem 'mysql2'
 end
 
+group :development, :test do
+  # Faker
+  gem 'faker'
+end
+
 gem 'devise'
 gem "jquery-rails"
 gem "net-smtp"
