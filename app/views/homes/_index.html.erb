@@ -1,3 +1,4 @@
+
 <%= form_tag(homes_search_movie_path, method: :get) do %>
   <%= label_tag :keywords, '検索ワード' %>
 
@@ -11,14 +12,14 @@
 <% end %>
 
 <%# @resultsにデータが入っていれば検索結果を表示する %>
-<!--<%# if @results %>-->
-<!--  <h2><%#= @keywords %> Search Result ( <%#= @type %> )-->
-<!--  <%# @results.each do |result| %>-->
-<!--    <p>-->
-<!--      <%#= result.title %><br>-->
-<!--      <small>-->
-<!--        <%#= result.body %>-->
-<!--      </small>-->
-<!--    </p>-->
-<!--  <%# end %>-->
-<!--<%# end %>-->
+<% if @results %>
+  <h2><%= @keywords %> Search Result ( <%= @type %> )--></h2>
+  <% @results.each do |result| %>
+    <p>
+      <%= result.title %><br>
+      <small>
+        <%= result.body %>
+      </small>
+    </p>
+  <% end %>
+<% end %>

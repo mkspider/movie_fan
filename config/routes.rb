@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
 devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -24,11 +23,12 @@ get "homes/search_movie" => "homes#index"
       end
     end
 
-  
+
 
   end
 
   namespace :admins do
+    resources :users, only:[:index,:show,:destroy]
     resources :movies do
       resources :reviews, only:[:create,:index,:show,:destroy]do
         resources :comments, only:[:index,:show,:destroy]do
