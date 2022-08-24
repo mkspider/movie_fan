@@ -4,9 +4,9 @@
   <h2><%= @keywords %> Search Result ( <%= @type %> )--></h2>
   <% @results.each do |result| %>
     <p>
-      <%= result.@movie.filmname %><br>
+      <%= result.filmname %><br>
       <small>
-        <%= result.@movie.introduction %>
+        <%= result.introduction %>
       </small>
     </p>
   <% end %>
