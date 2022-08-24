@@ -1,0 +1,13 @@
+<!--ジャンル絞り込み結果-->
+<%# @resultsにデータが入っていれば検索結果を表示する %>
+<% if @results %>
+  <h2><%= @keywords %> Search Result ( <%= @type %> )--></h2>
+  <% @results.each do |result| %>
+    <p>
+      <%= result.@movie.filmname %><br>
+      <small>
+        <%= result.@movie.introduction %>
+      </small>
+    </p>
+  <% end %>
+<% end %>

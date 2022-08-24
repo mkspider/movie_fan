@@ -11,6 +11,7 @@ devise_for :admins, controllers: {
   registrations: 'users/registrations'
 }
 post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+get "homes/search_movie" => "homes#index"
 
 
   namespace :users do
@@ -23,7 +24,7 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
       end
     end
 
-    get "search_movie" => "movies#search_movie"
+  
 
   end
 

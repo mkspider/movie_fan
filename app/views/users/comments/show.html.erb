@@ -1,2 +1,22 @@
-<h1>User::Comments#show</h1>
-<p>Find me in app/views/user/comments/show.html.erb</p>
+<h2>投稿詳細</h2>
+
+<table>
+  <tr>
+    <td>
+      <% @users.each do |user| %>
+       <% if user.profile_image.present? %>
+        <%= image_tag user.profile_image,size:"100x100" %>
+       <% end %>
+    </td>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+      <% end %>
+  </tr>
+  <tr>
+     <td><%= @comment.comment %></td>
+    <% if @comment.user.id == current_user.id %>
+      <td><button><%= link_to "削除",  users_movie_review_comment_path(movie_id: @movie, review_id: @review, comment_id: @comment), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
+    <% end %>
+  </tr>
+</table>

@@ -5,12 +5,12 @@
         <h2 class="p-3 mb-2 bg-dark text-white">コメント一覧</h2>
         <h1 class="text-right">
 
-          <%= link_to "返信する", new_users_movie_review_comment_path(@review.id), class: "btn btn-dark rounded-pill" %>
+          <%= link_to "返信する", new_users_movie_review_comment_path(@review.movie, @review.id), class: "btn btn-dark rounded-pill" %>
         </h1>
         <p id="notice"></p>
         <table class="table table-hover">
           <tr class="table-secondary">
-            <th>ユーザーネーム</th>
+            <th>返信欄</th>
           </tr>
           <% @comments.each do |comment| %>
             <tr class="table-borderless" data-href="<%= users_movie_review_comment_path(@movie.id,@review.id, comment) %>">
