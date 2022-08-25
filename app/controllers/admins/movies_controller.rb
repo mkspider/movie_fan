@@ -6,20 +6,27 @@ class Admins::MoviesController < ApplicationController
   def index
     @genres = Genre.all
     @movies = Movie.all.page(params[:page]).per(10)
+    @tag_list=Tag.all
   end
 
   def show
     @movie = Movie.find(params[:id])
     @review = Review.new
+    @movie_tags = @movie.tags
+
   end
 
   def create
     @movie = Movie.new(movie_params)
     @genres = Genre.all
-    @movie.save
+    tag_list=params[:movie][:name].split(',')
+    if @movie.save
+       @movie.save_tag(tag_list)
       redirect_to admins_movies_path(@movie)
       flash[:notice] = '作品を登録しました！'
-
+    else
+      render:new  
+    end
   end
 
   def edit
@@ -42,8 +49,9 @@ class Admins::MoviesController < ApplicationController
       redirect_to admins_movies_path(@movie)
   end
 
-private
-def movie_params
-   params.require(:movie).permit(:filmname,:genre_id,:introduction,:image)
-end
+  private
+  def movie_params
+    params.require(:movie).permit(:filmname,:genre_id,:introduction,:image)
+  end
+
 end
