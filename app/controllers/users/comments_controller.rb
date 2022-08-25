@@ -16,10 +16,8 @@ class Users::CommentsController < ApplicationController
   def show
     @comment = Comment.find(params[:id])
     @review =Review.find(params[:review_id])
+    @movie = Movie.find(params[:movie_id])
     @users = User.all
-    @comment.user_id = current_user.id
-    comment.review_id = review.id
-    comment.movie_id = movie.id
   end
 
   def create
@@ -41,7 +39,7 @@ class Users::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @review = @comment.review.movie_id
     @comment.destroy
-    redirect_to users_movie_review_comments_path(@comment)
+    redirect_to users_movie_review_comments_path
   end
 
   def update

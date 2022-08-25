@@ -1,0 +1,7 @@
+<!--タグリスト-->
+<% @tag_list.each do |list|%>
+<%=list.name %>
+<%="(#{list.movie.count})" %><% end %>
+
+<% @movie.each do |post| %>
+<i class="fas fa-tag"><%= movie.tags.map(&:name).join(', ') %></i>
