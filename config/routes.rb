@@ -13,6 +13,7 @@ post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 get "homes/search_movie" => "homes#search"
 
 
+
   namespace :users do
     resources :users, only:[:show,:edit,:update]
     resources :genres, only:[:show]
@@ -35,6 +36,7 @@ get "homes/search_movie" => "homes#search"
         end
       end
     end
+    get "search_tag"=>"movies#search_tag"
     resources :genres, only:[:index,:create,:edit,:update,:destroy]
   end
   # resources :movies do

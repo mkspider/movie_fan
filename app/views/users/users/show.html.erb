@@ -3,7 +3,12 @@
   <tr>
     <th>プロフィール画像</th>
     <td><%#= image_tag @user.get_profile_image, size:'100x100' %></td>
-    <p>投稿ユーザー画像：<%= image_tag @user.profile_image, size:"200x200"%></p>
+      <% if @user.profile_image.attached? %>
+    <p>投稿ユーザー画像：<%= image_tag @user.profile_image, size:"200x200"%>
+      <% else %>
+        <%= image_tag 'no_image.jpg', size: "200x200" %>
+      <% end %>
+    </p>
   </tr>
   <tr>
     <th>ユーザーネーム</th>

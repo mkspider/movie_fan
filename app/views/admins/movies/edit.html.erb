@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="col-md-8 offset-md-2"> 
+  <div class="col-md-8 offset-md-2">
   <div class="shadow p-3 mb-5 bg-white rounded">
     <div class="row">
       <div class="col-md-12" style="text-align: left;">
@@ -8,11 +8,19 @@
         <%= form_with model: @movie, url: admins_movie_path, method: :patch do |f| %>
         <form>
           <table class="table table-borderless">
-          <tr><div class="form-group", style="text-align: left;",>
-            <td><%= f.label :作品画像, class: "mr-5" %></td>
-                 <td><%= f.file_field :image, accept: "image/*" %></td>
-          </div>  
+          <tr>
+            <div class="form-group", style="text-align: left;",>
+              <td><%= f.label :作品画像, class: "mr-5" %></td>
+              <td><%= f.file_field :image, accept: "image/*" %></td>
+            </div>
           </tr>
+            <div class="field">
+              <%= f.label"タグ (,で区切ると複数タグ登録できます)" %>
+                <%= f.text_field :tag_name,value: @tag_list,class:"form-control"%>
+           </div>
+           <div class="actions" style="margin:20px 0;">
+              <%= f.submit "投稿",class:"btn btn-outline-primary btn-block" %>
+           </div>
            <tr><div class="form-group">
               <div class="col-sm-10">
               <p id="notice"></p>
@@ -21,10 +29,10 @@
                     <p id="notice"></p>
                   <tr><td><%= f.label :作品概要, class: "mr-5" %></td>
                 <td><%= f.text_area :introduction %></td></tr>
-               
+
               </div>
            </div>
-            
+
            <tr><div class="form-group">
               <div class="col-sm-10">
               <p id="notice"></p>
@@ -40,7 +48,7 @@
         </table>
         <div class="form-group" style="text-align: center;">
                  <p id="notice"></p>
-                  <%= f.submit ' 変更を保存 ' , class: "btn btn-outline-success" %> 
+                  <%= f.submit ' 変更を保存 ' , class: "btn btn-outline-success" %>
         </div>
         </form>
         <% end %>
