@@ -1,7 +1,9 @@
 <!--タグリスト-->
-<% @tag_list.each do |list|%>
-<%=list.name %>
-<%="(#{list.movie.count})" %><% end %>
+<% tag_list.each do |list|%>
+<%=link_to list.tag_name, admins_search_tag_path(tag_id: list.id) %>
+<%="(#{list.movies.count})" %>
+<% end %>
 
-<% @movie.each do |post| %>
-<i class="fas fa-tag"><%= movie.tags.map(&:name).join(', ') %></i>
+<%# movies.each do |movie| %>
+  <%#= movie.tags.map(&:tag_name).join(', ') %>
+<%# end %>

@@ -12,6 +12,9 @@
         <% else %>
           <%= image_tag 'movie.png', size: "200x200" %>
         <% end %>
+        <% @movie_tags.each do |tag| %>
+          <%=tag.tag_name%><%="(#{tag.movies.count})" %>
+        <% end %>
       </tr>
      </table>
       </div>
@@ -33,5 +36,5 @@
   </div>
   </div>
 </div>
-showについて
-タグ表示はadmin/userどちらもやりたいので、どっちでも作成する
+<!--showについて-->
+<!--タグ表示はadmin/userどちらもやりたいので、どっちでも作成する-->

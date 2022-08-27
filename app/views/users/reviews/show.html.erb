@@ -3,15 +3,15 @@
 <table>
   <tr>
     <td>
-      <% @users.each do |user| %>
-       <% if user.profile_image.present? %>
-        <%= image_tag user.profile_image,size:"100x100" %>
+      <%# @users.each do |user| %>
+       <% if @review.user.profile_image.present? %>
+        <%= image_tag @review.user.profile_image,size:"100x100" %>
        <% end %>
     </td>
-        <td><%= user.name %></td>
-        <td><%= user.age %></td>
-        <td><%= user.gender %></td>
-      <% end %>
+        <td><%= @review.user.name %></td>
+        <td><%= @review.user.age %></td>
+        <td><%= @review.user.gender %></td>
+      <%# end %>
   </tr>
   <tr>
      <td><%= @review.title %></td>

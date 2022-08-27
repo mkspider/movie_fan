@@ -6,10 +6,11 @@
           <%= link_to genre.genre_name, users_genre_path(genre.id),class: "btn btn-outline-dark w-100" %>
         </div>
         <% end %>
-          <td>
+          <div>
             <!--<検索機能>-->
             <%= render  "homes/index" %>
-          </td>
+          </div>
+           <div><%= render "admins/movies/index",tag_list:@tag_list,movies:@movies %></div>
     </div>
     <div>
       <h3>貴方が気になった作品を探してみましょう！</h3>
