@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2" style="margin-top: 50px; text-align: center;"> <button type="button" class="btn btn-dark w-100 btn-lg">ジャンル検索</button>
+      
       <% @genres.each do |genre| %>
         <div>
           <%= link_to genre.genre_name, users_genre_path(genre.id),class: "btn btn-outline-dark w-100" %>
