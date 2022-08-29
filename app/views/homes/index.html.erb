@@ -4,7 +4,7 @@
   <h2><%= @keywords %> Search Result ( <%= @type %> )--></h2>
   <% @results.each do |result| %>
     <p>
-      <%= result.filmname %><br>
+      <%= link_to result.filmname, users_movie_path(result) %><br>
       <small>
         <%= result.introduction %>
       </small>
