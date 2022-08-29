@@ -16,7 +16,7 @@
   <h2><%= @keywords %> Search Result ( <%= @type %> )--></h2>
   <% @results.each do |result| %>
     <p>
-      <%= result.title %><br>
+      <%= link_to"" result.title %><br>
       <small>
         <%= result.body %>
       </small>
