@@ -66,9 +66,10 @@ end
 
 group :development, :test do
   # Faker
-  gem 'faker'
+
 end
 
+gem 'faker'
 gem 'devise'
 gem "jquery-rails"
 gem "net-smtp"
