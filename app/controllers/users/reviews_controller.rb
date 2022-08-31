@@ -22,6 +22,8 @@ class Users::ReviewsController < ApplicationController
     review = Review.new(review_params)
     review.movie_id = movie.id
     review.user_id = current_user.id
+    review.score = Language.get_data(review_params[:review])  #この行を追加
+    
     review.save
     redirect_to users_movie_reviews_path
   end

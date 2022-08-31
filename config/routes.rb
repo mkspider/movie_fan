@@ -23,9 +23,6 @@ get "homes/search_movie" => "homes#search"
          end
       end
     end
-
-
-
   end
 
   namespace :admins do

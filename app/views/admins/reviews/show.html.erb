@@ -14,6 +14,7 @@
     <div class="col-md-4"style="margin-top: 150px;">
     <table class="table">
       <tbody>
+       
         <tr><td>ユーザーネーム</td><td>:<%= @review.user.name %></td></tr>
         <tr><td>年齢</td><td>:<%= @review.user.age %></td></tr>
         <tr><td>性別</td><td>:<%= @review.user.gender %></td></tr>
@@ -29,6 +30,9 @@
     </div>
         <td><%= link_to "返信欄へ",admins_movie_review_comments_path(movie_id: @movie, review_id: @review) %></td>
         <td><button><%= link_to "削除", admins_movie_review_path(@review), method: :delete, data: { confirm: '本当に消しますか？' } %></button></td>
+ 　　　　　<p><%= @review.body %></p>
+          <p class="sentiment-score">ユーザーの評価スコア[<%= @review.score %>]
+          </p>     
      </tbody>
   </div>
   </div>
