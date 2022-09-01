@@ -9,6 +9,10 @@
         <%= image_tag @review.user.profile_image,size:"250x250" %>
        <% end %>
     </tr>
+      <div class="review-comment">
+        <span class="list-body"><%= @review.review %></span>
+        <span class="sentiment-score">ユーザーの評価スコア<%= @review.score %></span>
+      </div>
       </table>
     </div>
        <div class="col-md-4"style="margin-top: 150px;">
