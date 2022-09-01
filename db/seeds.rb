@@ -11,7 +11,7 @@ Admin.create!(
   password: '202020',
 )
 
-100.times.each do |tmp|
+10.times.each do |tmp|
   Movie.create([
                 filmname: Faker::JapaneseMedia::StudioGhibli.movie,
                 introduction: Faker::JapaneseMedia::StudioGhibli.quote
@@ -24,12 +24,17 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: true)
 
-99.times do |n|
+#users = []
+10.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@example.com"
   password = "password"
-  User.create!(name:  name,
+#  users.push(
+    User.create!(name:  name,
                email: email,
                password:              password,
                password_confirmation: password)
+#               )
 end
+
+#users[0].reviews.create_with_score(review: "楽しい！", title:"面白かった！")
