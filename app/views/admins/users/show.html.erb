@@ -7,11 +7,11 @@
     </div>
     <div class="col-md-8", style="margin-top: 50px;">
       <tr>
-        <%# if @user.image.attached? %>
-          <%#= image_tag @user.image,size: "250x250" %>
-        <%# else %>
-          <%#= image_tag 'movie.png', size: "200x200" %>
-        <%# end %>
+        <% if @user.profile_image.attached? %>
+          <%= profile_image_tag @user.image,size: "250x250" %>
+        <% else %>
+          <%= profile_image_tag 'no_image.jpg', size: "200x200" %>
+        <% end %>
       </tr>
      </table>
       </div>

@@ -7,10 +7,7 @@
           <%= link_to genre.genre_name, users_genre_path(genre.id),class: "btn btn-outline-dark w-100" %>
         </div>
         <% end %>
-          <div>
-            <!--<検索機能>-->
-            <%= render  "homes/index" %>
-          </div>
+         
            <div><%= render "admins/movies/index",tag_list:@tag_list,movies:@movies %></div>
     </div>
     <div>

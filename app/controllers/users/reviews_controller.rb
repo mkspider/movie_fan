@@ -7,7 +7,7 @@ class Users::ReviewsController < ApplicationController
     @reviews = Review.where(movie_id: params[:movie_id]).page(params[:page]).per(4)
     @movie =Movie.find(params[:movie_id])
     @users = User.all
-
+    @review_score = calc_average(Review.where(movie_id: params[:movie_id]))
   end
 
   def show
@@ -23,7 +23,7 @@ class Users::ReviewsController < ApplicationController
     review.movie_id = movie.id
     review.user_id = current_user.id
     review.score = Language.get_data(review_params[:review])  #この行を追加
-    
+
     review.save
     redirect_to users_movie_reviews_path
   end
@@ -49,6 +49,12 @@ class Users::ReviewsController < ApplicationController
       render "edit"
     end
   end
+
+  # 平均
+  def calc_average(reviews)
+    return reviews.average(:score)*100
+  end
+
 
   private
   def review_params
