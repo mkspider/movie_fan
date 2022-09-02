@@ -31,7 +31,6 @@ class HomesController < ApplicationController
     if sign_in user
     flash.now[:notice] = "待っていました<% current_user.name %>さん"
     end
-    byebug
   end
 
 

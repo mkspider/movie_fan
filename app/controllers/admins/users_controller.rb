@@ -7,7 +7,9 @@ class Admins::UsersController < ApplicationController
 
  def show
     @user = User.find(params[:id])
+    byebug
     @review.score = Language.get_data(review_params[:review])
+    
  end
 
   def destroy
@@ -25,4 +27,9 @@ class Admins::UsersController < ApplicationController
   def user_params
      params.require(:user).permit(:name,:age,:gender,:image)
   end
+  
+  # def review_params
+  #   params.require(:review).permit(:review)
+  # end
+  
 end
