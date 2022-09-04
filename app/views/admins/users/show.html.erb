@@ -7,11 +7,11 @@
     </div>
     <div class="col-md-8", style="margin-top: 50px;">
       <tr>
-        <% if @user.profile_image.attached? %>
-          <%= profile_image_tag @user.image,size: "250x250" %>
-        <% else %>
-          <%= profile_image_tag 'no_image.jpg', size: "200x200" %>
-        <% end %>
+        <%# if @user.profile_image.attached? %>
+          <%#= profile_image_tag @user.image,size: "250x250" %>
+        <%# else %>
+          <%#= profile_image_tag 'no_image.jpg', size: "200x200" %>
+        <%# end %>
       </tr>
      </table>
       </div>
@@ -20,8 +20,9 @@
       <tbody>
       <td>ユーザーID</td><td><%= @user.id %></td>
       <tr><td>名前</td><td><%= @user.name %></td></tr>
-        <tr><td>年齢</td><td><%= @user.age %></td></tr>
-          <tr><td>性別</td><td><%= @user.gender %></td></tr>
+      <tr><td>年齢</td><td><%= @user.age %></td></tr>
+      <tr><td>性別</td><td><%= @user.gender %></td></tr>
+      <tr><td>レビュワースコア</td><td><%= @user.reviews.average(:score) %></td></tr>
               <tr>
                 <td><%= link_to "削除する", admins_user_path(@user.id),method: :delete, "data-confirm" => "削除しますか?",  class: "btn btn-outline-success" %></td>
                 <td><%= link_to "一覧に戻る", admins_users_path, class: "btn btn-outline-success" %></td>

@@ -6,6 +6,13 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+def review_average
+  if reviews.any?
+     reviews.average(:score)*10
+  else
+     ""
+  end
+end
 
 def get_profile_image
   if profile_image.attached?
