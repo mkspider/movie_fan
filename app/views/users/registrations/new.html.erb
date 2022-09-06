@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2><p class="text-start">新規登録画面</p></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -22,8 +22,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録する！" %>
   </div>
 <% end %>
-
+<div>
+  <%= link_to 'お試しログイン（ゲスト登録）', homes_guest_sign_in_path, method: :post %>
+</div>
 <%= render "users/shared/links" %>
