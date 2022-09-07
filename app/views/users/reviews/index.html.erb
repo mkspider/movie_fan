@@ -4,10 +4,7 @@
       <div class="shadow p-3 mb-5 bg-white rounded">
         <h2 class="p-3 mb-2 bg-dark text-white">レビュー一覧</h2>
         <h1 class="text-right">
-          <div>作品名</div>
-          <div>
-            <%= @movie.filmname %>
-          </div>
+          <div>作品名:<%= @movie.filmname %></div>
           <%= link_to "＋新規追加",new_users_movie_review_path(@movie.id), class: "btn btn-dark rounded-pill" %>
         </h1>
         <p id="notice"></p>
@@ -19,7 +16,7 @@
             <th>性別</th>
           </tr>
           <!--スコア計算表示-->
-          <%= @review_score %>
+          <%#= @review_score %>
           <% @reviews.each do |review| %>
             <tr class="table-borderless" data-href="<%= users_movie_review_path(@movie, review) %>">
               <td>

@@ -1,35 +1,31 @@
 <%= notice %>
-<p>プロフィール</p>
-<table>
-  <tr>
-    <th>プロフィール画像</th>
-    <td><%#= image_tag @user.get_profile_image, size:'100x100' %></td>
-      <% if @user.profile_image.attached? %>
-    <p>投稿ユーザー画像：<%= image_tag @user.profile_image, size:"200x200"%>
-      <% else %>
-        <%= image_tag 'no_image.jpg', size: "200x200" %>
-      <% end %>
-    </p>
-  </tr>
-  <tr>
-    <th>ユーザーネーム</th>
-    <td><%= @user.name %></td>
-  </tr>
-  <tr>
-    <th>性別</th>
-    <td><%= @user.gender %></td>
-  </tr>
-  <tr>
-    <th>年代</th>
-    <td><%= @user.age %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= @user.email %></td>
-  </tr>
-
-</table>
-<%= link_to "編集する", edit_users_user_path(current_user) %>
-
-
+<div class="container" style="margin-top: 50px;">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+　　　<table class="table">
+      <h2 class="p-3 mb-2 bg-dark text-white">マイページ</h2>
+        <tr><div class="form-group", style="text-align: left;",>
+          <td><% if @user.profile_image.attached? %>
+            投稿ユーザー画像：<%= image_tag @user.profile_image, size:"200x200"%>
+              <% else %>
+                <%= image_tag 'no_image.jpg', size: "200x200" %>
+              <% end %>
+          </td>
+          </div>
+      </table>    
+    </div>
+  </div>
+        </tr>
+        <div class="col-md-6">
+        <table class="table">
+          <tr><td>ユーザーネーム</td><td>:<%= @user.name %></td></tr>
+          <tr><td>年齢</td><td>:<%= @user.age %></td></tr>
+          <tr><td>性別</td><td>:<%= @user.gender %></td></tr>
+          <tr><td>メールアドレス</td><td>:<%= @user.email %></td></tr>
+          <tr><td><%= link_to "編集する", edit_users_user_path(current_user) %></td></tr>
+        </table>
+        </div>
+  </div>
+</div>  
 
