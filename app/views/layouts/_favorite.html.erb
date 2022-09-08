@@ -1,9 +1,14 @@
-<% if post.favo?(current_user) %>
-  <%= link_to favorites_path(post), method: :delete do %>
-    ♥ <%= review.favorites.count %>
+<% if !user_signed_in? %>
+  <i class="fa fa-heart like-btn"></i>
+  <%= post.favorite.length %>
+<% elsif current_user.favorited_by?(review.id) %>
+  <%= link_to users_movie_review_favorites_path(post, review.favorites), class: "like-link", method: :delete, remote: true do %>
+    <i class="fa fa-heart unlike-btn"></i>
   <% end %>
+  <%= post.favorites.length %>
 <% else %>
-  <%= link_to favorites_path(post), method: :post do %>
-    ♡ <%= review.favorites.count %>
+  <%= link_to users_movie_review_favorites_path(post), class: "like-link", method: :post, remote: true do %>
+    <i class="fa fa-heart like-btn"></i>
   <% end %>
+  <%= post.review.length %>
 <% end %>
