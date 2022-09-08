@@ -14,6 +14,7 @@
             <th>ユーザーネーム</th>
             <th>年代</th>
             <th>性別</th>
+            <th>いいね数</th>
 
           </tr>
           <!--スコア計算表示-->
@@ -26,8 +27,8 @@
               <td><%= review.user.name %></td>
               <td><%= review.user.age %></td>
               <td><%= review.user.gender %></td>
-                <div id = "like_<%#= @review.id %>">
-                  <%= render partial: "layouts/favorite", locals: { post: @review } %>
+                <div id = "like_<%#= review.id %>">
+                  <%#= render partial: "favorites/favorite", locals: { post: @review } %>
                 </div>
             </tr>
         <% end %>
