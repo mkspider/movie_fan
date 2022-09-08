@@ -19,6 +19,7 @@ get "homes/search_movie" => "homes#search"
     resources :genres, only:[:show]
     resources :movies, only:[:index,:show] do
       resources :reviews do
+        resources :favorites, only: [:create, :destroy]
          resources :comments do
          end
       end
