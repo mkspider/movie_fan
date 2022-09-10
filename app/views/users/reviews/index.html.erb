@@ -27,6 +27,7 @@
               <td><%= review.user.name %></td>
               <td><%= review.user.age %></td>
               <td><%= review.user.gender %></td>
+              <!--いいね機能-->
                 <div id = "like_<%#= review.id %>">
                   <%#= render partial: "favorites/favorite", locals: { post: @review } %>
                 </div>
