@@ -28,22 +28,22 @@
               <td><%= review.user.age %></td>
               <td><%= review.user.gender %></td>
               <!--いいね機能-->
-                <div id = "like_<%#= review.id %>">
-                  <%#= render partial: "favorites/favorite", locals: { post: @review } %>
+                <div id = "like_<%#= @movie.review.id %>">
+                  <%#= render partial: "favorites/favorite", locals: { post: review } %>
                 </div>
             </tr>
         <% end %>
-                    <script>
-                      $('#star-all-rate<%#= post.id%>').raty({
-                        size      : 36,
-                        starOff   : '<%#= asset_path('star-off.png') %>',
-                        starOn    : '<%#= asset_path('star-on.png') %>',
-                        starHalf  : '<%#= asset_path('star-half.png') %>',
-                        readOnly: true,
-                        score: <%#= post.all_rate %>,
-                      });
-                    </script>
-            </tr>
+        <!--<★評価機能>-->
+          <script>
+            ('#star-all-rate<%#= post.id%>').raty({
+              size      : 36,
+              starOff   : '<%#= asset_path('star-off.png') %>',
+              starOn    : '<%#= asset_path('star-on.png') %>',
+              starHalf  : '<%#= asset_path('star-half.png') %>',
+              readOnly: true,
+              score: <%#= post.all_rate %>,
+            });
+          </script>
         </table>
       </div>
       <ul class="pagination justify-content-center">
