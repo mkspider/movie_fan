@@ -5,12 +5,12 @@
 　　　<table class="table">
       <h2 class="p-3 mb-2 bg-dark text-white">作品詳細</h2>
     </div>
-    <div class="col-md-8", style="margin-top: 50px;">
+    <div class="col-md-8", style="margin-top: 20px;">
       <tr>
         <% if @movie.image.attached? %>
           <%= image_tag @movie.image,size: "250x250" %>
         <% else %>
-          <%= image_tag 'movie.png', size: "200x200" %>
+          <%= image_tag 'movie.png', size: "250x250" %>
         <% end %>
         <% @movie_tags.each do |tag| %>
           <%=tag.tag_name%><%="(#{tag.movies.count})" %>

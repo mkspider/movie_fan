@@ -28,8 +28,9 @@
         <tr><td>本文</td><td><%= @review.review %></td></tr>
       </table>
     </div>
-      <div id = "like_<%#= review.id %>">
-        <%#= render partial: "favorites/favorite", locals: { post: @review } %>
+    <!--いいね機能-->
+      <div id = "like_<%= @review.id %>">
+        <%= render partial: "users/review_favorites/favorite", locals: { movie: @movie, review: @review } %>
       </div>
      <td><%= link_to "返信欄へ",users_movie_review_comments_path(movie_id: @movie, review_id: @review) %></td>
      <td><%= link_to "返信する", new_users_movie_review_comment_path(movie_id: @movie, review_id: @review) %></td>
