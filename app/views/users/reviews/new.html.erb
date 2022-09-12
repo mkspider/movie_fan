@@ -7,6 +7,20 @@
           <p id="notice"></p>
           <%= form_with model: @review, url:users_movie_reviews_path, method: :post do |f| %>
             <form>
+          　<!--★評価機能-->
+              <div class="form-group row" id="star">
+                <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
+                <%= f.hidden_field :rate, id: :review_star %>
+              </div>
+              <script>
+                $('#star').raty({
+                  size     : 20,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  scoreName: 'review[star]'
+                });
+              </script>
+              
               <div class="form-group">
                 <p id="notice"></p>
                 <%= f.label :作品名 %>
@@ -17,6 +31,8 @@
                 <%= f.label :商品説明 %>
                   <%= f.text_area :review, placeholder: "ここに説明文を記述します" %>
               </div>
+
+
               <div class="form-group" style="text-align: center;">
                 <p id="notice"></p>
                 <%= f.submit "新規登録", class: "btn btn-outline-success"  %>
