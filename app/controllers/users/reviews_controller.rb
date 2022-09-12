@@ -8,6 +8,7 @@ class Users::ReviewsController < ApplicationController
     @movie =Movie.find(params[:movie_id])
     @users = User.all
     @review_score = calc_average(Review.where(movie_id: params[:movie_id]))
+    
   end
 
   def show
