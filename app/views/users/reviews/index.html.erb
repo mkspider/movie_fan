@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 50px;">
   <div class="col-md-8 offset-md-2">
-  
+
       <div class="shadow p-3 mb-5 bg-white rounded">
         <h2 class="p-3 mb-2 bg-dark text-white">レビュー一覧</h2>
         <h1 class="text-right">
@@ -28,9 +28,9 @@
               <td><%= review.user.age %></td>
               <td><%= review.user.gender %></td>
               <!--いいね機能-->
-                <div id = "like_<%#= @movie.review.id %>">
-                  <%#= render partial: "favorites/favorite", locals: { post: review } %>
-                </div>
+                <td id = "like_<%= review.id %>">
+                  <%= render partial: "users/review_favorites/favorite", locals: { movie: @movie, review: review } %>
+                </td>
             </tr>
         <% end %>
         <!--<★評価機能>-->

@@ -9,4 +9,9 @@ class Review < ApplicationRecord
 # =>  コントローラーの処理をここに持ってきてseedから呼べるようにする。
 #  end
 
+
+def written_by?(current_user)
+  user == current_user
+end
+
 end
