@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_11_093311) do
+ActiveRecord::Schema.define(version: 2022_09_13_102158) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_09_11_093311) do
     t.integer "movie_id"
     t.string "title"
     t.decimal "score", precision: 5, scale: 3
+    t.float "star"
   end
 
   create_table "tagmaps", force: :cascade do |t|

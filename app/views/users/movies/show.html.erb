@@ -31,6 +31,19 @@
           </tr>
           </tbody>
         </table>
+        <span>評価：</span>
+      <span id="star-rate-<%= @movie.id %>"></span>
+      <script>
+        $('#star-rate-<%= @movie.id %>').raty({
+          size: 36,
+          starOff: "<%= asset_path('star-off.png') %>",
+          starOn: "<%= asset_path('star-on.png') %>",
+          starHalf: "<%= asset_path('star-half.png') %>",
+          half: true,
+          readOnly: true,
+          score: <%= "#{@movie.reviews.average(:star).to_f.round(1)}" %>,
+        });
+      </script>
       </div>
     </div>
   </div>
