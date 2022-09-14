@@ -13,21 +13,21 @@
 
 <%# @resultsにデータが入っていれば検索結果を表示する %>
 <div class="col-md-10">
-  <h2　class="border-bottom"><%= @keywords %>検索結果( <%= @type %> )</h2>
     <% if @results %>
+     <h2　class="border-bottom"><%= @keywords %>検索結果( <%= @type %> )</h2>
       <% @results.each do |result| %>
         <div class = "col-6">
           <div class="row">
             <div class="col-lg-6">
               <p>
-                 <%= link_to result.title, users_movie_path(result) %><br>
+                 <%= link_to result.filmname, users_movie_path(result) %><br>
                 <small>
-                  <%= result.body %>
+                  <%= result.introduction %>
                 </small>
               </p>
             </div>
-          </div>  
-        </div>    
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
