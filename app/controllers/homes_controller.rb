@@ -4,6 +4,7 @@ class HomesController < ApplicationController
  end
 
  def search
+    @movie = Movie.first
     @keywords = params[:keywords].split(/[[:blank:]]+/)
     #   AND : AND検索 / OR : OR検索
     @type = params[:type]
