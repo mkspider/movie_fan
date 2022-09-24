@@ -32,7 +32,7 @@
     <div id = "like_<%= @review.id %>">
       <%= render partial: "users/review_favorites/favorite", locals: { movie: @movie, review: @review } %>
     </div>
-    <!--<評価機能>-->
+    <!--評価機能-->
      <div class="relative-review-evaluation">
       <span>評価：</span>
       <span id="star-rate-<%= @review.id %>"></span>
