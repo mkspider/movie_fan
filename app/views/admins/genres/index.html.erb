@@ -3,11 +3,11 @@
 <div class="shadow p-3 mb-5 bg-white rounded">
   <div class="row">
   <div class="col-md">
+    <%= form_with model: @genre, url: admins_genres_path, method: :post do |f| %>
     <table class="table">
       <thead>
         <h2 class="p-3 mb-2 bg-dark text-white">ジャンル一覧・追加</h2><br> </thead>
       <tbody>
-        <%= form_with model: @genre, url: admins_genres_path, method: :post do |f| %>
         <label>ジャンル名</label>
           <td>
             <%= f.text_field :genre_name, placeholder: "ジャンル名" %>
@@ -15,9 +15,10 @@
           </td>
       </tbody>
     </table>
+    <% end %>
   </div>
 </div>
-<% end %> <br>
+
   <!--二段に切り替える-->
   <div class="row ">
     <div class="col-md-5">
@@ -35,7 +36,7 @@
               </td>
               <td>
                 <%= link_to "編集する", edit_admins_genre_path(genre) ,class: "btn btn-outline-success" %>
-              
+
               </td>
             </tr>
             <% end %>
