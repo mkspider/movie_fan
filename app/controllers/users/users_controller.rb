@@ -6,9 +6,8 @@ class Users::UsersController < ApplicationController
   def edit
     @user = current_user
   end
-
-  def update
   
+  def update
     @user = current_user
     if @user.update(user_params)
       redirect_to users_user_path(@user.id), notice:"情報を更新しました！"
