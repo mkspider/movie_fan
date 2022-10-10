@@ -46,7 +46,6 @@
           score: <%= @review.star %>,
         });
       </script>
-       
      </div>
      <td><%= link_to "返信欄へ",users_movie_review_comments_path(movie_id: @movie, review_id: @review) %></td>
      <td><%= link_to "返信する", new_users_movie_review_comment_path(movie_id: @movie, review_id: @review) %></td>
